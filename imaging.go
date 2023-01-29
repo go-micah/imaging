@@ -4,6 +4,7 @@ package imaging
 import (
 	"fmt"
 	"image"
+	"image/color"
 	"math"
 )
 
@@ -19,10 +20,18 @@ func Dist(width, height int) image.Image {
 	img := image.NewGray(image.Rectangle{upLeft, lowRight})
 
 	maxDistance := calculateDistance(float64(width), float64(height), float64(centerX), float64(centerY))
-	pointDistance := calculateDistance(400, 400, float64(centerX), float64(centerY))
-
 	fmt.Println(maxDistance)
-	fmt.Println(pointDistance)
+
+	normalizeFactor := (maxDistance - 256) / 256
+
+	for x := 0; x < width; x++ {
+		for y := 0; y < height; y++ {
+			pointDistance := calculateDistance(float64(x), float64(y), float64(centerX), float64(centerY))
+			pointDistance = pointDistance * normalizeFactor
+			gray := color.RGBA{uint8(pointDistance), uint8(pointDistance), uint8(pointDistance), 0xff}
+			img.Set(x, y, gray)
+		}
+	}
 
 	return img
 }
