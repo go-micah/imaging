@@ -2,7 +2,6 @@
 package imaging
 
 import (
-	"fmt"
 	"image"
 	"image/color"
 	"math"
@@ -19,10 +18,8 @@ func Dist(width, height int) image.Image {
 
 	img := image.NewGray(image.Rectangle{upLeft, lowRight})
 
-	maxDistance := calculateDistance(float64(width), float64(height), float64(centerX), float64(centerY))
-	fmt.Println(maxDistance)
-
-	normalizeFactor := (maxDistance - 256) / 256
+	maxDistance := calculateDistance(0, 0, float64(centerX), float64(centerY))
+	normalizeFactor := 255 / maxDistance
 
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
