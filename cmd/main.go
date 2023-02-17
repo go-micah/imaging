@@ -9,10 +9,12 @@ import (
 
 func main() {
 
-	img := imaging.Dist(512, 512)
+	img := imaging.Steps(1033, 512)
+	f, _ := os.Create("./output/steps.png")
+	png.Encode(f, img)
 
-	f, _ := os.Create("./output/dist.png")
-
+	img = imaging.Dist(1033, 512)
+	f, _ = os.Create("./output/dist.png")
 	png.Encode(f, img)
 
 }

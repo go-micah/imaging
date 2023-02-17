@@ -1,2 +1,2 @@
-dist:
-	go build -o ./bin/dist ./cmd/main.go
+all:
+	go build -o ./bin/img ./cmd/main.go
