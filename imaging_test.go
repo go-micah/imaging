@@ -11,7 +11,7 @@ func TestGenerateZones(t *testing.T) {
 	if len(zones) != len(zoneColors) {
 		t.Errorf("expected %d zones, got %d", len(zoneColors), len(zones))
 	}
-	if expected := width / (len(zoneColors) + 1); zones[0] != expected {
+	if expected := width / (len(zoneColors)); zones[0] != expected {
 		t.Errorf("expected first zone to be %d, got %d", expected, zones[0])
 	}
 }
@@ -31,7 +31,7 @@ func TestColorForZone(t *testing.T) {
 
 	// test each zone, make sure we have len(zoneColors) different colors
 	for i := 0; i < len(zoneColors); i++ {
-		increment := width / (len(zoneColors) + 1)
+		increment := width / (len(zoneColors))
 		pos := int((float64(i) + 0.5) * float64(increment))
 		tests = append(tests, struct {
 			position int
