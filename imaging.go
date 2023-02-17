@@ -23,7 +23,7 @@ var zoneColors = []color.RGBA{
 
 func generateZones(width int) []int {
 	zoneCount := len(zoneColors)
-	increment := width / (zoneCount + 1)
+	increment := width / (zoneCount)
 	zones := make([]int, zoneCount)
 	for i := 0; i < zoneCount; i++ {
 		zones[i] = (i + 1) * increment
