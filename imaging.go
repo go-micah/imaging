@@ -18,6 +18,26 @@ var zoneColors = []color.RGBA{
 	{169, 169, 169, 0xff},
 	{197, 197, 197, 0xff},
 	{225, 225, 225, 0xff},
+	{255, 255, 255, 0xff},
+}
+
+func generateZones(width int) []int {
+	zoneCount := len(zoneColors)
+	increment := width / (zoneCount + 1)
+	zones := make([]int, zoneCount)
+	for i := 0; i < zoneCount; i++ {
+		zones[i] = (i + 1) * increment
+	}
+	return zones
+}
+
+func colorForZone(position int, zones []int) color.RGBA {
+	for i, zone := range zones {
+		if position < zone {
+			return zoneColors[i]
+		}
+	}
+	return zoneColors[len(zoneColors)-1]
 }
 
 // Steps returns a grayscale image divided into 10 equal steps
@@ -28,25 +48,11 @@ func Steps(width, height int) image.Image {
 
 	img := image.NewGray(image.Rectangle{upLeft, lowRight})
 
-	zoneCount := len(zoneColors)
-	increment := width / (zoneCount + 1)
-	zones := make([]int, zoneCount)
-	for i := 0; i < zoneCount; i++ {
-		zones[i] = (i + 1) * increment
-	}
+	zones := generateZones(width)
 
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
-			// we don't check if x >= 0 because x is always >= 0
-			pixelColor := zoneColors[zoneCount-1]
-			for i := 0; i < zoneCount; i++ {
-				// zones[i] is the upper limit of the current zone
-				if x <= zones[i] {
-					pixelColor = zoneColors[i]
-					break
-				}
-			}
-			img.Set(x, y, pixelColor)
+			img.Set(x, y, colorForZone(x, zones))
 		}
 	}
 
