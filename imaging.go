@@ -16,7 +16,7 @@ func Steps(width, height int) image.Image {
 
 	img := image.NewGray(image.Rectangle{upLeft, lowRight})
 
-	increment := width / 10
+	increment := width / 11
 	zone0 := 0
 	zone1 := zone0 + increment
 	zone2 := zone1 + increment
