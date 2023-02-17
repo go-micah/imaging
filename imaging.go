@@ -18,7 +18,6 @@ var zoneColors = []color.RGBA{
 	{169, 169, 169, 0xff},
 	{197, 197, 197, 0xff},
 	{225, 225, 225, 0xff},
-	{255, 255, 255, 0xff},
 }
 
 // Steps returns a grayscale image divided into 10 equal steps
@@ -30,17 +29,18 @@ func Steps(width, height int) image.Image {
 	img := image.NewGray(image.Rectangle{upLeft, lowRight})
 
 	zoneCount := len(zoneColors)
-	increment := width / zoneCount
+	increment := width / (zoneCount + 1)
 	zones := make([]int, zoneCount)
 	for i := 0; i < zoneCount; i++ {
-		zones[i] = i * increment
+		zones[i] = (i + 1) * increment
 	}
 
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
-			// we don't check if x >= zone[0], because zone[0] is always 0 and x is always >= 0
+			// we don't check if x >= 0 because x is always >= 0
 			pixelColor := zoneColors[zoneCount-1]
-			for i := 1; i < zoneCount; i++ {
+			for i := 0; i < zoneCount; i++ {
+				// zones[i] is the upper limit of the current zone
 				if x <= zones[i] {
 					pixelColor = zoneColors[i]
 					break
