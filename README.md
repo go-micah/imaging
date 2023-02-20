@@ -14,11 +14,15 @@ A little image processing library written in Go
 
 ![](https://imaging.micahwalter.com/dist?width=800&height=400)
 
+Try this in your browser [imaging.micahwalter.com/dist?width=800&height=400](https://imaging.micahwalter.com/dist?width=800&height=400). You can adjust the width and height.
+
 ## Steps
 
 `steps` generates a "step wedge" test image. These types of test images can be useful when calibrating a camera system.
 
 ![](https://imaging.micahwalter.com/steps?width=800&height=400)
+
+Try this in your browser [imaging.micahwalter.com/steps?width=800&height=400](https://imaging.micahwalter.com/steps?width=800&height=400). You can adjust the width and height.
 
 
 ## AWS Lambda
