@@ -15,10 +15,23 @@ A little image processing library written in Go
 
 ## AWS Lambda
 
-This repository also contains an AWS SAM template as well as AWS Lambda functions, which can be used to easily deployed to AWS. The SAM template builds the following resources:
+This repository also contains an AWS SAM template as well as AWS Lambda functions, which can be used to easily deploy to AWS. The SAM template builds the following resources:
 
 - API Gateway
 - AWS Lambda Functions for each endpoint
+
+To deploy to AWS using AWS SAM, follow these commands:
+
+```
+make aws
+sam deploy --guided
+```
+
+You can also use SAM to test locally by using this command:
+
+```
+sam local start-api
+```
 
 ## CLI
 
