@@ -11,3 +11,11 @@ A little image processing library written in Go
 ## Steps
 
 ![](https://imaging.micahwalter.com/steps?width=800&height=400)
+
+
+## AWS Lambda
+
+This repository also contains an AWS SAM template as well as AWS Lambda functions, which can be used to easily deployed to AWS. The SAM template builds the following resources:
+
+- API Gateway
+- AWS Lambda Functions for each endpoint

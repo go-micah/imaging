@@ -9,6 +9,10 @@ import (
 
 func main() {
 
+	// get args from cli
+
+	// create output folder if it doesnt exist
+
 	img := imaging.Steps(1033, 512)
 	f, _ := os.Create("./output/steps.png")
 	png.Encode(f, img)
