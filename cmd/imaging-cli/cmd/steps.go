@@ -12,7 +12,7 @@ func init() {
 	rootCmd.AddCommand(stepsCmd)
 	stepsCmd.Flags().IntVar(&height, "height", 512, "height in pixels")
 	stepsCmd.Flags().IntVar(&width, "width", 512, "width in pixels")
-
+	stepsCmd.Flags().StringVarP(&filename, "filename", "f", "output.png", "desired output filename")
 }
 
 var stepsCmd = &cobra.Command{
@@ -25,7 +25,7 @@ Saves the output as a PNG file`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		img := imaging.Steps(width, height)
-		f, _ := os.Create("./steps.png")
+		f, _ := os.Create(filename)
 		png.Encode(f, img)
 	},
 }

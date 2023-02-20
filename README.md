@@ -19,3 +19,17 @@ This repository also contains an AWS SAM template as well as AWS Lambda function
 
 - API Gateway
 - AWS Lambda Functions for each endpoint
+
+## CLI
+
+You can compile and use this library as a CLI application. To do so, simply run the following command:
+
+```
+make imaging-cli
+```
+
+To use the CLI, follow the help by typing:
+
+```
+./bin/imaging-cli help
+```

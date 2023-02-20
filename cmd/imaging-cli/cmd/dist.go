@@ -12,7 +12,7 @@ func init() {
 	rootCmd.AddCommand(distCmd)
 	distCmd.Flags().IntVar(&height, "height", 512, "height in pixels")
 	distCmd.Flags().IntVar(&width, "width", 512, "width in pixels")
-
+	distCmd.Flags().StringVarP(&filename, "filename", "f", "output.png", "desired output filename")
 }
 
 var distCmd = &cobra.Command{
@@ -25,7 +25,7 @@ Saves the output as a PNG file`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		img := imaging.Dist(width, height)
-		f, _ := os.Create("./dist.png")
+		f, _ := os.Create(filename)
 		png.Encode(f, img)
 	},
 }

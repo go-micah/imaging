@@ -12,7 +12,10 @@ var rootCmd = &cobra.Command{
 	Long:  `This program allows you to generate a number of test images.`,
 }
 
-var height, width int
+var (
+	height, width int
+	filename      string
+)
 
 func Execute() {
 	err := rootCmd.Execute()
