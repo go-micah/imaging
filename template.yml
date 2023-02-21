@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  imaging-api
+  imaging
   
-  Sample SAM Template for imaging-api
+  service for delivering generated images
 
 Globals:
   Api:
