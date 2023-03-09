@@ -18,7 +18,7 @@ func init() {
 var distCmd = &cobra.Command{
 	Use:   "dist",
 	Short: "Generates a distance image",
-	Long: `Generates a disatance image.
+	Long: `Generates a distance image.
 Uses with width and height parameters.
 Saves the output as a PNG file`,
 
@@ -26,6 +26,10 @@ Saves the output as a PNG file`,
 
 		img := imaging.Dist(width, height)
 		f, _ := os.Create(filename)
-		png.Encode(f, img)
+
+		err := png.Encode(f, img)
+		if err != nil {
+			return
+		}
 	},
 }
