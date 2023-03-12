@@ -26,6 +26,10 @@ Saves the output as a PNG file`,
 
 		img := imaging.Steps(width, height)
 		f, _ := os.Create(filename)
-		png.Encode(f, img)
+
+		err := png.Encode(f, img)
+		if err != nil {
+			return
+		}
 	},
 }
