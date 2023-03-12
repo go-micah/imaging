@@ -1,9 +1,21 @@
 package imaging
 
 import (
+	"fmt"
 	"image/color"
 	"testing"
 )
+
+func TestCalculateDistance(t *testing.T) {
+	want := 724.0773439350247
+	fmt.Println(want)
+	got := calculateDistance(0, 0, 512, 512)
+	fmt.Println(got)
+
+	if want != got {
+		t.Errorf("expected %f, got %f", want, got)
+	}
+}
 
 func TestGenerateZones(t *testing.T) {
 	width := 100
