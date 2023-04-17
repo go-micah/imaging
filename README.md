@@ -24,7 +24,6 @@ Try this in your browser [imaging.micahwalter.com/dist?width=800&height=400](htt
 
 Try this in your browser [imaging.micahwalter.com/steps?width=800&height=400](https://imaging.micahwalter.com/steps?width=800&height=400). You can adjust the width and height.
 
-
 ## AWS Lambda
 
 This repository also contains an AWS SAM template as well as AWS Lambda functions, which can be used to easily deploy to AWS. The SAM template builds the following resources:
