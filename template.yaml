@@ -17,7 +17,7 @@ Resources:
   DistFunction:
     Type: AWS::Serverless::Function 
     Metadata:
-      BuildMethod: go1.x
+      BuildMethod: makefile
     Properties:
       CodeUri: ./cmd/functions/dist/
       Handler: bootstrap
@@ -36,7 +36,7 @@ Resources:
   StepsFunction:
     Type: AWS::Serverless::Function 
     Metadata:
-      BuildMethod: go1.x
+      BuildMethod: makefile
     Properties:
       CodeUri: ./cmd/functions/steps/
       Handler: bootstrap
