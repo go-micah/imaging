@@ -3,7 +3,7 @@ module github.com/go-micah/imaging
 go 1.19
 
 require (
-	github.com/aws/aws-lambda-go v1.40.0
+	github.com/aws/aws-lambda-go v1.41.0
 	github.com/spf13/cobra v1.7.0
 )
 
