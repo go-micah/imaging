@@ -1,4 +1,1 @@
-bin/*
-output/*
-.aws-sam/*
 .DS_Store
