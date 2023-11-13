@@ -2,8 +2,6 @@
 
 A little image processing library written in Go
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/go-micah/imaging.svg)](https://pkg.go.dev/github.com/go-micah/imaging) [![Go](https://github.com/go-micah/imaging/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/go-micah/imaging/actions/workflows/go.yml)
-
 ## Overview
 
 `imaging` is a small image processing library written in Go. You can use this library in your code by importing it as a package, or you can use the CLI directly by cloning this repo and compiling the program. There is also a template for deploying the code to AWS, which allows you to use the functions in a web browser.
