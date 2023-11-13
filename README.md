@@ -24,36 +24,3 @@ Try this in your browser [imaging.micahwalter.com/dist?width=800&height=400](htt
 
 Try this in your browser [imaging.micahwalter.com/steps?width=800&height=400](https://imaging.micahwalter.com/steps?width=800&height=400). You can adjust the width and height.
 
-## AWS Lambda
-
-This repository also contains an AWS SAM template as well as AWS Lambda functions, which can be used to easily deploy to AWS. The SAM template builds the following resources:
-
-- API Gateway
-- AWS Lambda Functions for each endpoint
-
-To deploy to AWS using AWS SAM, follow these commands:
-
-```
-make aws
-sam deploy --guided
-```
-
-You can also use SAM to test locally by using this command:
-
-```
-sam local start-api
-```
-
-## CLI
-
-You can compile and use this library as a CLI application. To do so, simply run the following command:
-
-```
-make imaging-cli
-```
-
-To use the CLI, follow the help by typing:
-
-```
-./bin/imaging-cli help
-```
